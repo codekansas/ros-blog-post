@@ -48,7 +48,9 @@ install-ros: initialize
 		-c conda-forge \
 		spdlog=1.9.2 \
 		foonathan-memory=0.7.2 \
-		ros-humble-desktop
+		ros-humble-desktop \
+		colcon-core \
+		colcon-common-extensions
 .PHONY: install-ros
 
 build-ros: initialize
