@@ -1,8 +1,8 @@
 # Makefile
 
 define HELP_MESSAGE
-                    Home Robot
-                    ----------
+                    ROS Blog Post
+                    -------------
 
 # Installing
 
