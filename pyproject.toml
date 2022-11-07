@@ -1,0 +1,93 @@
+[tool.black]
+
+line-length = 120
+target-version = ["py36", "py37", "py38"]
+include = '\.pyi?$'
+
+[tool.isort]
+
+profile = "black"
+known_first_party = ["custom_turtlesim", "tests"]
+forced_separate = ["tests"]
+combine_as_imports = true
+
+[tool.pytest.ini_options]
+
+addopts = "-rx -rf -x -q --full-trace"
+testpaths = ["tests"]
+
+[tool.pylint.general]
+
+jobs = 2
+
+[tool.pylint.basic]
+
+# Allow single-character and two-character variable names.
+good-names-rgxs = '^[_a-zA-Z][_a-zA-Z0-9]?$'
+
+[tool.pylint.format]
+
+max-line-length = 120
+disable = [
+    "abstract-method",
+    "broad-except",
+    "duplicate-code",
+    "missing-class-docstring",
+    "missing-function-docstring",
+    "missing-module-docstring",
+    "no-else-continue",
+    "no-else-return",
+    "protected-access",
+    "singleton-comparison",
+    "too-few-public-methods",
+    "too-many-ancestors",
+    "too-many-arguments",
+    "too-many-branches",
+    "too-many-instance-attributes",
+    "too-many-locals",
+    "too-many-return-statements",
+    "too-many-statements",
+    "unnecessary-lambda-assignment",
+    "useless-return",
+]
+
+[tool.pylint.typecheck]
+
+generated-members = []
+
+
+ignored-modules = [
+    "launch_ros",
+    "launch",
+]
+
+[tool.mypy]
+
+pretty = true
+show_column_numbers = true
+show_error_context = true
+show_error_codes = true
+show_traceback = true
+disallow_untyped_defs = true
+strict_equality = true
+allow_redefinition = true
+
+warn_unused_ignores = true
+warn_redundant_casts = true
+
+# For TorchScript stuff.
+disable_error_code = ["attr-defined"]
+
+[[tool.mypy.overrides]]
+
+module = [
+    "launch_ros.*",
+    "launch.*",
+    "pybind11.*",
+    "pytest.*",
+    "serial_asyncio.*",
+    "serial.*",
+    "tqdm.*",
+]
+
+ignore_missing_imports = true

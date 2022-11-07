@@ -1,0 +1,17 @@
+{
+  "recommendations": [
+    /* C++ / CUDA */
+    "xaver.clang-format",
+    "cheshirekow.cmake-format",
+    "jeff-hykin.better-cpp-syntax",
+    "twxs.cmake",
+    "ms-vscode.cmake-tools",
+
+    /* Python */
+    "ms-python.python",
+    "Tyriar.sort-lines",
+
+    /* JSON */
+    "esbenp.prettier-vscode"
+  ]
+}

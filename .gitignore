@@ -1,0 +1,7 @@
+# .gitignore
+
+# ROS stuff.
+build/
+install/
+log/
+
