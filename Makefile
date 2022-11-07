@@ -7,7 +7,9 @@ define HELP_MESSAGE
 # Installing
 
 1. Install ROS on the robot using `make install-ros`
-2. Launch ROS using `make launch-ros`
+2. Build the package using `make build-ros`
+3. Run Turtlesim using `make run-turtlesim`
+4. Run the custom Turtlesim node in another terminal using `make run-custom-turtlesim-node`
 
 # Running Static Analysis
 
@@ -61,9 +63,17 @@ build-ros: initialize
 	colcon build
 .PHONY: build-ros
 
-run-ros: initialize
+run-turtlesim: initialize
+	ros2 run turtlesim turtlesim_node
+.PHONY: run-turtlesim
+
+run-custom-turtlesim-node: initialize
 	. install/setup.sh && ros2 run custom_turtlesim controller
-.PHONY: run-ros
+.PHONY: run-custom-turtlesim-node
+
+clean:
+	rm -r build/ install/ log/
+.PHONY: clean
 
 # ------------------------ #
 #         Linting          #
